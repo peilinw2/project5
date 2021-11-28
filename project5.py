@@ -62,10 +62,27 @@ def prim(adjList, adjMat):
 Kruskal's Algorithm
 Note: the edgeList is ALREADY SORTED!
 Note: Use the isEqual method of the Vertex class when comparing vertices.
+Inputs: 
+adjList: the adjacency list for the map(a list of Vertex objects)
+edgeList: the list of Edge objects for the map
+
+Output: a list of edges that are in the MST
 """
 def kruskal(adjList, edgeList):
-    ##### Your implementation goes here. #####
+# initialize all singleton sets for each vertex
+    for v in adjList:
+        makeset(v)
+# initialize the empty MST
     X = []
+
+# loop through the edges in increasing order
+    for e in edgeList:
+# if the min edge crosses a cut, add it to our MST
+        u, v = e.vertices
+        if not find(u). isEqual(find(v)):
+            X.append(e)
+            union(u, v)
+           
     return X
 
 ################################################################################
@@ -112,7 +129,26 @@ def find(v):
 union: this function will union the sets of vertices v and u.
 """
 def union(u,v):
-    ##### Your implementation goes here. #####
+#first, find the root of the tree for u
+#and the tree for v
+    ru = find(u)
+    rv = find(v)
+
+#if the sets are already the same, return
+    if ru == rv:
+        return
+
+#make shorter set point to taller set
+    if ru.height > rv.height:
+        rv.pi = ru 
+    elif ru.height < rv.height:
+        ru.pi = rv
+#same height, break tie
+    else:
+        ru.pi = rv
+
+#tree got taller, increment rv.height
+        rv.height += 1
     return
 
 ################################################################################
