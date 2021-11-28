@@ -170,6 +170,24 @@ def tsp(adjList, start):
         
 #append start to stack
     stack.append(start)
+
+  # when stack is not empty
+    while len(stack) != 0:
+# Obtain the current Vertex
+        current = stack.pop()
+
+# visit the vertex that have not been visited
+        if current.visited == False:
+# if  it has not been visited
+            current.visited = True
+            tour.append(current.rank)
+
+# push all neighbors into the stack
+            for neigh in current.mstN:
+                stack.append(neigh)
+
+# Append start vertex into the tour
+    tour.append(start.rank)
     
     return tour
 
