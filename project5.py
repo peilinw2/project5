@@ -4,7 +4,7 @@ Project 5
 Fall 2021
 
 Partner 1: Amy Wang (pw137)
-Partner 2: Lu Liu (ll139)
+Partner 2: Lu Liu (ll394)
 Date:
 """
 
