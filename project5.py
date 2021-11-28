@@ -155,15 +155,20 @@ def union(u,v):
 
 """
 TSP
+Inputs: list of vertices/the starting vertex.
+Outputs: the optimal route that includes the path of vertices.
 """
 def tsp(adjList, start):
   
+#initialize stack and an empty list   
     tour = []
     stack = []
-
+    
+#set all vertex as unvisited 
     for vertex in adjList:
         vertex.visited = False
         
+#append start to stack
     stack.append(start)
     
     return tour
