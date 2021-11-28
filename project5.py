@@ -5,7 +5,7 @@ Fall 2021
 
 Partner 1: Amy Wang (pw137)
 Partner 2: Lu Liu (ll394)
-Date:
+Date: 11/28/2021
 """
 
 # Import math, itertools, and time.
