@@ -157,8 +157,15 @@ def union(u,v):
 TSP
 """
 def tsp(adjList, start):
-    ##### Your implementation goes here. #####
+  
     tour = []
+    stack = []
+
+    for vertex in adjList:
+        vertex.visited = False
+        
+    stack.append(start)
+    
     return tour
 
 ################################################################################
